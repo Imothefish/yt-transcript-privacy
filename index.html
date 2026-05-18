@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>Privacy Policy — YouTube Transcript Downloader &amp; Search</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --fg: #1f2328;
+      --muted: #57606a;
+      --bg: #ffffff;
+      --bg-alt: #f6f8fa;
+      --border: #d0d7de;
+      --link: #0969da;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fg: #e6edf3;
+        --muted: #8d96a0;
+        --bg: #0d1117;
+        --bg-alt: #161b22;
+        --border: #30363d;
+        --link: #58a6ff;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+      padding: 32px 16px;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.85rem;
+      margin: 0 0 8px;
+      line-height: 1.2;
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin: 2rem 0 0.5rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    p, ul, ol { margin: 0.6rem 0; }
+    a { color: var(--link); }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: var(--bg-alt); }
+    code {
+      font: 0.92em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: var(--bg-alt);
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="meta">
+    Product: <strong>YouTube Transcript Downloader &amp; Search</strong> (Chrome extension)<br>
+    Effective date: <strong>2026-05-18</strong><br>
+    Contact: <a href="mailto:mishasworlds@gmail.com">mishasworlds@gmail.com</a>
+  </p>
+
+  <h2>Summary</h2>
+  <p>
+    YouTube Transcript Downloader &amp; Search is a Chrome extension that lets you view, search, copy, and export
+    the caption text of YouTube videos. The extension runs entirely in your browser. We do not operate a server.
+    We do not collect, transmit, or sell any personal data.
+  </p>
+
+  <h2>What the extension accesses</h2>
+  <table>
+    <thead>
+      <tr><th>Data</th><th>Why</th><th>Where it goes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Caption (<code>timedtext</code>) data from the current YouTube watch page</td>
+        <td>To display the transcript, allow search and timestamp navigation, and export TXT / SRT / VTT files</td>
+        <td>Stays in your browser. Read directly from YouTube on the page you opened; never sent to us.</td>
+      </tr>
+      <tr>
+        <td>Your preferences (last selected caption language, view mode, panel state)</td>
+        <td>To restore your settings on the next video</td>
+        <td>Stored locally via Chrome's <code>storage</code> API. Never leaves your browser unless you have Chrome sync enabled (in which case Google syncs it to your other Chrome installs under your account).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>What the extension does NOT do</h2>
+  <ul>
+    <li>No account or sign-in is required.</li>
+    <li>No analytics, telemetry, crash reporting, or tracking pixels.</li>
+    <li>No advertising; no ad networks.</li>
+    <li>No third-party SDKs.</li>
+    <li>No remote code execution. All JavaScript is bundled at build time from local sources.</li>
+    <li>No transmission of transcript text, video titles, watch history, or any other content to us or to third parties.</li>
+    <li>No AI or external API calls in this version.</li>
+  </ul>
+
+  <h2>Permissions used</h2>
+  <ul>
+    <li><code>sidePanel</code> — to render the transcript reader UI in Chrome's side panel.</li>
+    <li><code>storage</code> — to persist your local preferences (described above).</li>
+    <li>Host permission <code>https://www.youtube.com/*</code> — to read the public caption data on YouTube watch pages.</li>
+  </ul>
+  <p>We request only the permissions strictly required to deliver the feature you installed the extension for.</p>
+
+  <h2>Children</h2>
+  <p>The extension is not directed to children under 13 and does not knowingly collect any personal information from anyone.</p>
+
+  <h2>Third-party services</h2>
+  <p>
+    The extension communicates only with YouTube (<code>https://www.youtube.com/*</code>) and only to read caption data on the page you are already viewing.
+    YouTube's own privacy policy applies to your use of YouTube itself:
+    <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    If we ever change how the extension handles data, we will update this page and the effective date above.
+    Material changes will also be noted in the extension's Chrome Web Store changelog.
+  </p>
+
+  <h2>Contact</h2>
+  <p>Questions or requests: <a href="mailto:mishasworlds@gmail.com">mishasworlds@gmail.com</a></p>
+
+  <footer>
+    Source of this page lives in the extension's source repository. Last updated 2026-05-18.
+  </footer>
+</main>
+</body>
+</html>
