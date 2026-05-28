@@ -84,15 +84,17 @@
   <h1>Privacy Policy</h1>
   <p class="meta">
     Product: <strong>YouTube Transcript Downloader &amp; Search</strong> (Chrome extension)<br>
-    Effective date: <strong>2026-05-18</strong><br>
+    Effective date: <strong>2026-05-27 (v1.1.0)</strong><br>
     Contact: <a href="mailto:mishasworlds@gmail.com">mishasworlds@gmail.com</a>
   </p>
 
   <h2>Summary</h2>
   <p>
     YouTube Transcript Downloader &amp; Search is a Chrome extension that lets you view, search, copy, and export
-    the caption text of YouTube videos. The extension runs entirely in your browser. We do not operate a server.
-    We do not collect, transmit, or sell any personal data.
+    the caption text of YouTube videos. The extension runs entirely in your browser. We do not collect transcript
+    text, video URLs, video titles, or any personally identifying information. Starting with v1.1.0, the extension
+    can send anonymous, aggregated usage counts to help us decide which features to improve — see
+    "Anonymous usage analytics" below for exactly what is and isn't collected, and how to turn it off.
   </p>
 
   <h2>What the extension accesses</h2>
@@ -107,29 +109,67 @@
         <td>Stays in your browser. Read directly from YouTube on the page you opened; never sent to us.</td>
       </tr>
       <tr>
-        <td>Your preferences (last selected caption language, view mode, panel state)</td>
+        <td>Your preferences (last selected caption language, view mode, panel state, analytics opt-in)</td>
         <td>To restore your settings on the next video</td>
         <td>Stored locally via Chrome's <code>storage</code> API. Never leaves your browser unless you have Chrome sync enabled (in which case Google syncs it to your other Chrome installs under your account).</td>
+      </tr>
+      <tr>
+        <td>Anonymous usage event counts (optional — see below)</td>
+        <td>To learn which features get used so we can prioritise improvements</td>
+        <td>Sent to Amplitude (United States dataset) under a random per-install device identifier. No transcript text, video URLs, video titles, or account data. Opt-out at any time.</td>
       </tr>
     </tbody>
   </table>
 
+  <h2>Anonymous usage analytics (v1.1.0+)</h2>
+  <p>
+    <strong>What it is.</strong> A short list of event names (for example: <code>transcript_loaded</code>,
+    <code>copy_clicked</code>, <code>download_clicked</code>) and a small set of non-identifying properties (the
+    chosen export format, whether the "include timestamps" toggle is on, the length of a search query but never
+    the query text itself, your browser's UI language). Each event carries a random <code>device_id</code> that is
+    generated on your device and stored only locally — it is not linked to your name, email, Google account,
+    IP address, or any personal identifier.
+  </p>
+  <p>
+    <strong>Default behavior.</strong> If you install version 1.1.0 or later for the first time, anonymous
+    analytics are on by default. The welcome page tells you this, and you can turn it off at any time in the side
+    panel under More → Privacy → "Share anonymous usage". If you upgraded from an earlier version, analytics stay
+    off by default — you originally installed under a "no analytics" promise, so we won't change that without your
+    explicit consent. The toggle in More → Privacy is available if you ever decide to opt in; until you do,
+    nothing is collected.
+  </p>
+  <p>
+    <strong>What is never collected.</strong> Transcript text. Video URL, video ID, or video title. Search query
+    text. Selected text. Your YouTube account or any other Google account information. Your IP address is not
+    used to build a profile; Amplitude may temporarily see it as part of the HTTPS connection but it is not
+    stored against your <code>device_id</code>.
+  </p>
+  <p>
+    <strong>Processor.</strong> Amplitude Inc., US dataset (servers in the United States). Amplitude's privacy commitments and Data Processing Addendum cover the international transfer for non-US users. See
+    <a href="https://amplitude.com/privacy" rel="noopener">https://amplitude.com/privacy</a>.
+  </p>
+  <p>
+    <strong>How to disable.</strong> Side panel → More menu (three dots) → Privacy → uncheck "Share anonymous
+    usage". The change takes effect immediately and no further events are sent. To purge the local
+    <code>device_id</code>, uninstall and reinstall the extension.
+  </p>
+
   <h2>What the extension does NOT do</h2>
   <ul>
     <li>No account or sign-in is required.</li>
-    <li>No analytics, telemetry, crash reporting, or tracking pixels.</li>
-    <li>No advertising; no ad networks.</li>
-    <li>No third-party SDKs.</li>
-    <li>No remote code execution. All JavaScript is bundled at build time from local sources.</li>
-    <li>No transmission of transcript text, video titles, watch history, or any other content to us or to third parties.</li>
-    <li>No AI or external API calls in this version.</li>
+    <li>No advertising; no ad networks; no cross-site tracking pixels.</li>
+    <li>No third-party SDKs other than the Amplitude analytics SDK described above, and only when you have analytics enabled.</li>
+    <li>No remote code execution. All JavaScript is bundled at build time from local sources, including the Amplitude SDK.</li>
+    <li>No transmission of transcript text, video titles, watch history, search queries, or any content you select to us or to third parties.</li>
+    <li>No AI or external API calls beyond YouTube's own caption endpoint and the analytics endpoint described above.</li>
   </ul>
 
   <h2>Permissions used</h2>
   <ul>
     <li><code>sidePanel</code> — to render the transcript reader UI in Chrome's side panel.</li>
-    <li><code>storage</code> — to persist your local preferences (described above).</li>
+    <li><code>storage</code> — to persist your local preferences (described above), including the analytics opt-in flag.</li>
     <li>Host permission <code>https://www.youtube.com/*</code> — to read the public caption data on YouTube watch pages.</li>
+    <li>Host permission <code>https://api2.amplitude.com/*</code> — to send anonymous usage events when analytics are enabled. No requests are made to this host when analytics are disabled.</li>
   </ul>
   <p>We request only the permissions strictly required to deliver the feature you installed the extension for.</p>
 
@@ -137,11 +177,10 @@
   <p>The extension is not directed to children under 13 and does not knowingly collect any personal information from anyone.</p>
 
   <h2>Third-party services</h2>
-  <p>
-    The extension communicates only with YouTube (<code>https://www.youtube.com/*</code>) and only to read caption data on the page you are already viewing.
-    YouTube's own privacy policy applies to your use of YouTube itself:
-    <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>.
-  </p>
+  <ul>
+    <li><strong>YouTube</strong> — <code>https://www.youtube.com/*</code>. Read-only access to caption data on the page you are already viewing. YouTube's own privacy policy applies to your use of YouTube itself: <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>.</li>
+    <li><strong>Amplitude</strong> — <code>https://api2.amplitude.com/*</code>. Anonymous usage analytics, US dataset, only when enabled. Their privacy policy: <a href="https://amplitude.com/privacy" rel="noopener">https://amplitude.com/privacy</a>.</li>
+  </ul>
 
   <h2>Changes to this policy</h2>
   <p>
@@ -153,7 +192,7 @@
   <p>Questions or requests: <a href="mailto:mishasworlds@gmail.com">mishasworlds@gmail.com</a></p>
 
   <footer>
-    Source of this page lives in the extension's source repository. Last updated 2026-05-18.
+    Source of this page lives in the extension's source repository. Last updated 2026-05-27.
   </footer>
 </main>
 </body>
